@@ -1,0 +1,40 @@
+[include]
+  path = catppuccin
+[alias]
+  br = "branch"
+  c = "commit"
+  ca = "commit -a"
+  co = "checkout"
+  d = "diff"
+  l = "log"
+  pl = "pull"
+  ps = "push"
+  s = "status"
+  undo = "reset HEAD~1 --mixed"
+[core]
+  editor = "hx"
+  pager = "delta"
+[delta]
+  features = catppuccin-mocha
+  line-numbers = true
+  minus-style = "syntax auto"
+  navigate = true
+  plus-style = "syntax auto"
+  syntax-theme = "Dracula"
+[diff]
+  colorMoved = "default"
+[init]
+  defaultBranch = "master"
+[interactive]
+  diffFilter = "delta --color-only"
+[merge]
+  conflictstyle = "diff3"
+[credential "https://github.com"]
+	helper = 
+	helper = !gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !gh auth git-credential
+[user]
+	email = shubhamsharma@posteo.in
+	name = Shubham Sharma

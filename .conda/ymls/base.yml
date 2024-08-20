@@ -1,0 +1,11 @@
+name: base
+channels:
+  - conda-forge
+  - shubms
+dependencies:
+  - conda
+  - xonsh
+  - yazi
+  - dua-cli
+  - jedi
+prefix: /home/shub/.conda
