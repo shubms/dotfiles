@@ -1,0 +1,26 @@
+- name: Check if Podman is present
+  stat:
+    path: /usr/bin/podman
+  register: podman_status
+
+- name: Remove any existing sub{uid,gid} entries
+  ansible.builtin.lineinfile:
+    path: "/etc/sub{{ item }}"
+    regexp: "^{{ user }}:[0-9]+:[0-9]+$"
+    state: absent
+  loop:
+    - uid
+    - gid
+  when: podman_status.stat.exists
+
+- name: Ensure sub{uid,gid} blocks are present
+  ansible.builtin.blockinfile:
+    path: "/etc/sub{{ item }}"
+    block: "{{ user }}:{{ sub_id_start }}:{{ sub_id_count }}"
+    marker: "# {mark} ANSIBLE MANAGED BLOCK - {{ user }}"
+    create: true
+    mode: "0644"
+  loop:
+    - uid
+    - gid
+  when: podman_status.stat.exists

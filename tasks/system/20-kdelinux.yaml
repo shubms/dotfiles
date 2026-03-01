@@ -1,0 +1,25 @@
+- name: Enable IP Usage Tracking in for KDE Linux update service
+  community.general.ini_file:
+    group: root
+    mode: "644"
+    no_extra_spaces: true
+    option: IPAccounting
+    owner: root
+    path: /etc/systemd/system/kde-linux-sysupdated.service.d/override.conf
+    section: Service
+    value: true
+- name: Enable IP Usage Tracking in for Tailscale and add systemd-sysext dependence.
+  community.general.ini_file:
+    group: root
+    mode: "644"
+    no_extra_spaces: true
+    option: "{{ item.option }}"
+    owner: root
+    path: /etc/systemd/system/tailscaled.service.d/override.conf
+    section: "{{ item.section }}"
+    value: "{{ item.value }}"
+  loop:
+    - { section: Service, option: IPAccounting, value: true }
+    - { section: Unit, option: After, value: systemd-sysext.service }
+  loop_control:
+    label: "{{ item.section }}.{{ item.option }}"

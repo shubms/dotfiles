@@ -1,0 +1,6 @@
+- name: Bootc lint fix
+  ansible.builtin.replace:
+    path: /usr/lib/ostree/prepare-root.conf
+    regexp: "enabled = no"
+    replace: "enabled = yes"
+    backup: true
