@@ -1,0 +1,16 @@
+- name: Mask Systemd Units
+  ansible.builtin.systemd_service:
+    name: "{{ item.unit }}"
+    masked: true
+    state: stopped
+    scope: user
+  loop:
+    - { unit: gcr-ssh-agent.service }
+    - { unit: gcr-ssh-agent.socket }
+    - { unit: gpg-agent-browser.socket }
+    - { unit: gpg-agent-extra.socket }
+    - { unit: gpg-agent-ssh.socket }
+    - { unit: gpg-agent.service }
+    - { unit: gpg-agent.socket }
+  loop_control:
+    label: "Masking {{ item.unit }}"

@@ -1,0 +1,31 @@
+- name: Setup Flathub
+  community.general.flatpak_remote:
+    name: flathub
+    state: present
+    flatpakrepo_url: https://dl.flathub.org/repo/flathub.flatpakrepo
+    method: user
+- name: Install Bitwarden
+  community.general.flatpak:
+    name: com.bitwarden.desktop
+    state: latest
+    method: user
+- name: Install Flatseal
+  community.general.flatpak:
+    name: com.github.tchx84.Flatseal
+    state: latest
+    method: user
+- name: Install Spotify
+  community.general.flatpak:
+    name: com.spotify.Client
+    state: latest
+    method: user
+- name: Install Warehouse
+  community.general.flatpak:
+    name: io.github.flattool.Warehouse
+    state: latest
+    method: user
+- name: Install Key Rack
+  community.general.flatpak:
+    name: app.drey.KeyRack
+    state: latest
+    method: user

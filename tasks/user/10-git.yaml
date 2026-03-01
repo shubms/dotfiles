@@ -1,0 +1,26 @@
+- name: Configure Git
+  community.general.ini_file:
+    group: "{{ user }}"
+    mode: "644"
+    option: "{{ item.option }}"
+    owner: "{{ user }}"
+    path: "/home/{{ user }}/.config/git/config"
+    section: "{{ item.section }}"
+    value: "{{ item.value }}"
+  loop:
+    - { section: core, option: editor, value: hx }
+    - { section: core, option: pager, value: delta }
+    - { section: delta, option: dark, value: true }
+    - { section: delta, option: line-numbers, value: true }
+    - { section: delta, option: minus-style, value: "syntax auto" }
+    - { section: delta, option: navigate, value: true }
+    - { section: delta, option: plus-style, value: "syntax auto" }
+    - { section: delta, option: syntax-theme, value: "Dracula" }
+    - { section: diff, option: colorMoved, value: "default" }
+    - { section: init, option: defaultBranch, value: "master" }
+    - { section: interactive, option: diffFilter, value: "delta --color-only" }
+    - { section: merge, option: conflictStyle, value: zdiff3 }
+    - { section: user, option: email, value: "shubhamsharma@posteo.in" }
+    - { section: user, option: name, value: "Shubham Sharma" }
+  loop_control:
+    label: "Configuring {{ item.section }}.{{ item.option }}"

@@ -1,0 +1,16 @@
+- name: Home dir config
+  hosts: localhost
+  vars:
+    user: shubms
+
+  tasks:
+    - name: Configure Systemd
+      ansible.builtin.include_tasks: ../tasks/user/00-systemd.yaml
+    - name: Configure Git
+      ansible.builtin.include_tasks: ../tasks/user/10-git.yaml
+    - name: Install Maple-Font
+      ansible.builtin.include_tasks: ../tasks/user/40-install-font.yaml
+      vars:
+        github_owner: "subframe7536"
+        github_repo: "maple-font"
+        asset_name: "MapleMono-NF-unhinted.zip"
