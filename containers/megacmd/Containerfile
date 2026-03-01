@@ -1,0 +1,9 @@
+ARG BASE=quay.io/toolbx/arch-toolbox:latest
+
+FROM ${BASE}
+
+ARG PLAYBOOK=megacmd.yaml
+
+RUN printf '[DEB_Arch_Extra]\nSigLevel = Required TrustedOnly\nServer = https://mega.nz/linux/repo/Arch_Extra/$arch\n' | tee -a /etc/pacman.conf
+RUN pacman-key --init && pacman-key --populate && pacman-key --recv-keys B01C811880480C854C73EC7E1A664B787094A482 && pacman-key --lsign-key B01C811880480C854C73EC7E1A664B787094A482 && pacman -Syu --noconfirm && pacman -S --noconfirm megacmd
+
