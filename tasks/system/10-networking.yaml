@@ -1,0 +1,123 @@
+- name: Enable Systemd-Resolved service
+  ansible.builtin.systemd_service:
+    enabled: true
+    name: systemd-resolved.service
+    state: started
+
+- name: Link Systemd-Resolved Stub
+  ansible.builtin.file:
+    force: true
+    path: /etc/resolv.conf
+    src: /run/systemd/resolve/stub-resolv.conf
+    state: link
+
+- name: Enable DNS server and security features
+  community.general.ini_file:
+    group: root
+    mode: "u=rw,go=r"
+    no_extra_spaces: true
+    option: "{{ item.option }}"
+    owner: root
+    path: /etc/systemd/resolved.conf.d/dns_over_tls.conf
+    section: "Resolve"
+    value: "{{ item.value }}"
+  # yamllint disable rule:indentation
+  loop:
+    - {
+        option: "DNS",
+        value: "1.1.1.1#cloudflare-dns.com 9.9.9.9#dns.quad9.net",
+      }
+    - { option: "DNSOverTLS", value: "yes" }
+    - { option: "DNSSEC", value: "yes" }
+    - { option: "Domains", value: "~." }
+  # yamllint enable rule:indentation
+  loop_control:
+    label: "Configuring {{ item.option }}"
+
+- name: Install UFW configs
+  community.general.ini_file:
+    group: root
+    mode: "u=rw,go=r"
+    no_extra_spaces: true
+    option: "{{ item.option }}"
+    owner: root
+    path: "/etc/ufw/applications.d/{{ item.file }}"
+    section: "{{ item.section }}"
+    value: "{{ item.value }}"
+  # yamllint disable rule:indentation
+  loop:
+    - {
+        file: "syncthing",
+        section: "Syncthing",
+        option: "title",
+        value: "Syncthing",
+      }
+    - {
+        file: "syncthing",
+        section: "Syncthing",
+        option: "description",
+        value: "Syncthing file synchronisation",
+      }
+    - {
+        file: "syncthing",
+        section: "Syncthing",
+        option: "ports",
+        value: "22000|21027/udp",
+      }
+    - {
+        file: "syncthing",
+        section: "Syncthing-GUI",
+        option: "title",
+        value: "Syncthing GUI",
+      }
+    - {
+        file: "syncthing",
+        section: "Syncthing-GUI",
+        option: "description",
+        value: "Allow Syncthing web gui",
+      }
+    - {
+        file: "syncthing",
+        section: "Syncthing-GUI",
+        option: "ports",
+        value: "8384/tcp",
+      }
+    - {
+        file: "steam",
+        section: "Steam-LAN-Sharing",
+        option: "title",
+        value: "Steam LAN sharing",
+      }
+    - {
+        file: "steam",
+        section: "Steam-LAN-Sharing",
+        option: "description",
+        value: "Steam Local Network Game Transfers",
+      }
+    - {
+        file: "steam",
+        section: "Steam-LAN-Sharing",
+        option: "ports",
+        value: "27040/tcp|27031:27036/udp",
+      }
+    - {
+        file: "steam",
+        section: "Steam-Remote-Play",
+        option: "title",
+        value: "Steam Remote Play",
+      }
+    - {
+        file: "steam",
+        section: "Steam-Remote-Play",
+        option: "description",
+        value: "Steam Remote Play",
+      }
+    - {
+        file: "steam",
+        section: "Steam-Remote-Play",
+        option: "ports",
+        value: "27036/tcp|27031:27036/udp",
+      }
+  # yamllint enable rule:indentation
+  loop_control:
+    label: Configuring "{{ item.section }}.{{ item.option }}"

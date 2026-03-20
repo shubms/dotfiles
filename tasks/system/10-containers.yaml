@@ -19,7 +19,7 @@
     block: "{{ user }}:{{ sub_id_start }}:{{ sub_id_count }}"
     marker: "# {mark} ANSIBLE MANAGED BLOCK - {{ user }}"
     create: true
-    mode: "0644"
+    mode: "u=rw,go=r"
   loop:
     - uid
     - gid

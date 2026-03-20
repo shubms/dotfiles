@@ -7,16 +7,9 @@
     sub_id_count: 1048576
 
   tasks:
-    # - ansible.builtin.include_tasks: ../tasks/system/10-bootc.yaml
-    # - ansible.builtin.include_tasks: ../tasks/system/10-dnf.yaml
-    # - ansible.builtin.include_tasks: ../tasks/system/30-packages.yaml
-    # - ansible.builtin.include_tasks: ../tasks/system/31-dev.yaml
-    # - ansible.builtin.include_tasks: ../tasks/system/35-brave.yaml
-    # - ansible.builtin.include_tasks: ../tasks/system/35-cider.yaml
-    # - ansible.builtin.include_tasks: ../tasks/system/35-tailscale.yaml
     - name: Configure containers
       ansible.builtin.include_tasks: ../tasks/system/10-containers.yaml
     - name: Configure DNS and resolve.conf
-      ansible.builtin.include_tasks: ../tasks/system/10-resolve.yaml
+      ansible.builtin.include_tasks: ../tasks/system/10-networking.yaml
     - name: Configure KDE Linux
       ansible.builtin.include_tasks: ../tasks/system/20-kdelinux.yaml
