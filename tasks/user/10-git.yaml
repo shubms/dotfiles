@@ -1,7 +1,7 @@
 - name: Configure Git
   community.general.ini_file:
     group: "{{ user }}"
-    mode: "644"
+    mode: "u=rw,go=r"
     option: "{{ item.option }}"
     owner: "{{ user }}"
     path: "/home/{{ user }}/.config/git/config"
