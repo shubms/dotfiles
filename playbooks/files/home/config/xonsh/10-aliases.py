@@ -3,15 +3,19 @@ from xonsh.built_ins import XSH
 env = XSH.env
 aliases = XSH.aliases
 _admin_auth = "run0"
-_admin_edit = "vim"
+_admin_edit = "nano"
+_gui_edit = "gram"
 
 aliases["b"] = ["bat"]
 aliases["bw"] = ["flatpak", "run", "--command=bw", "com.bitwarden.desktop"]
 aliases["c"] = ["bat", "--style=plain", "--paging=never"]
 aliases["e"] = env["EDITOR"]
+aliases["eg"] = [_gui_edit]
 aliases["jcs"] = ["journalctl"]
 aliases["jcu"] = ["journalctl", "--user"]
 aliases["l"] = ["eza"] + env["EZA_ALIAS_OPTS"]
+aliases["lz"] = ["eza", "--context"] + env["EZA_ALIAS_OPTS"]
+aliases["l@"] = ["eza", "--extended"] + env["EZA_ALIAS_OPTS"]
 aliases["s"] = [_admin_auth]
 aliases["sc"] = [_admin_auth, "bat"]
 aliases["se"] = [_admin_auth, _admin_edit]

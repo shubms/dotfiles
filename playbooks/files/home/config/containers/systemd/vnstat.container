@@ -1,0 +1,24 @@
+[Unit]
+Description=VNStat Container
+
+[Container]
+AutoUpdate=registry
+ContainerName=vnstat
+Environment=TZ=Asia/Kolkata
+Environment=VNSTAT_5MinuteHours=-1
+Environment=VNSTAT_DailyDays=-1
+Environment=VNSTAT_HourlyDays=-1
+Environment=VNSTAT_LiveSpinner=1
+Environment=VNSTAT_MonthlyMonths=-1
+Environment=VNSTAT_OutputStyle=3
+Environment=VNSTAT_TopDayEntries=-1
+Environment=VNSTAT_YearlyYears=-1
+Image=ghcr.io/vergoh/vnstat:latest
+Network=host
+Volume=vnstat:/var/lib/vnstat
+
+[Service]
+Restart=always
+
+[Install]
+WantedBy=default.target

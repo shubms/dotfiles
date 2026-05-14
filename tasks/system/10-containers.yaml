@@ -1,5 +1,5 @@
 - name: Check if Podman is present
-  stat:
+  ansible.builtin.stat:
     path: /usr/bin/podman
   register: podman_status
 

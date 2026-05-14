@@ -1,0 +1,23 @@
+ARG BASE=registry.redhat.io/rhel10/rhel-bootc:latest
+
+FROM ${BASE}
+
+ARG PLAYBOOK=illumi.yaml
+
+LABEL containers.bootc=1
+
+WORKDIR /workdir
+
+COPY . .
+
+RUN cp -rfv /workdir/files/* / && mkdir -pv /usr/opt /var/cache && ln -svf /dnf /var/cache/libdnf5 && ln -svf /usr/opt /opt
+
+RUN dnf install -y ansible
+
+# RUN ansible-playbook /workdir/playbooks/${PLAYBOOK}
+
+RUN rm -rf /workdir /var/* /usr/etc
+
+# RUN ostree container commit
+
+RUN bootc container lint

@@ -1,0 +1,423 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/prefix-dev/pixi/main/schema/schema.json
+version = 1
+
+[envs.xonsh]
+channels = ["conda-forge", "shubms"]
+dependencies = { xonsh = "*", keyring = "*", pandas = "*", pip = "*", python = "*", uv = "*", yt-dlp = "*" }
+exposed = { xonsh = "xonsh", xonsh-cat = "xonsh-cat", xonsh-uname = "xonsh-uname", xonsh-uptime = "xonsh-uptime" }
+
+[envs.gram]
+channels = ["conda-forge", "shubms"]
+dependencies = { gram = "*", ansible-lint = "*", bash-language-server = "*", clang = "*", gcc = "*", go-shfmt = "*", nodejs = "*", prettier = "*", ruff = "*", shellcheck = "*", taplo = "*", typescript-language-server = "*", yaml-language-server = "*" }
+exposed = { gram = "gram" }
+shortcuts = ["gram"]
+
+[envs.ansible]
+channels = ["conda-forge", "shubms"]
+dependencies = { ansible = "*", ansible-lint = "*", "github3.py" = "*", python = "<3.14", paramiko = "*" }
+exposed = { ansible-test = "ansible-test", ansible = "ansible", ansible-config = "ansible-config", ansible-console = "ansible-console", ansible-doc = "ansible-doc", ansible-galaxy = "ansible-galaxy", ansible-inventory = "ansible-inventory", ansible-playbook = "ansible-playbook", ansible-pull = "ansible-pull", ansible-vault = "ansible-vault", ansible-connection = "ansible-connection", ansible-lint = "ansible-lint" }
+
+[envs.aria2]
+channels = ["conda-forge", "shubms"]
+dependencies = { aria2 = "*" }
+exposed = { aria2c = "aria2c" }
+
+[envs.b3sum]
+channels = ["conda-forge", "shubms"]
+dependencies = { b3sum = "*" }
+exposed = { b3sum = "b3sum" }
+
+[envs.backblaze-b2]
+channels = ["conda-forge", "shubms"]
+dependencies = { backblaze-b2 = "*" }
+exposed = { b2 = "b2", b2v3 = "b2v3", b2v4 = "b2v4" }
+
+[envs.bat]
+channels = ["conda-forge", "shubms"]
+dependencies = { bat = "*" }
+exposed = { bat = "bat" }
+
+[envs.beets]
+channels = ["conda-forge", "shubms"]
+dependencies = { beets = "*", python = "<3.14" }
+exposed = { beet = "beet" }
+
+[envs.bottom]
+channels = ["conda-forge", "shubms"]
+dependencies = { bottom = "*" }
+exposed = { btm = "btm" }
+
+[envs.carapace]
+channels = ["conda-forge", "shubms"]
+dependencies = { carapace = "*" }
+exposed = { carapace = "carapace" }
+
+[envs.chafa]
+channels = ["conda-forge", "shubms"]
+dependencies = { chafa = "*" }
+exposed = { chafa = "chafa" }
+
+[envs.curl]
+channels = ["conda-forge", "shubms"]
+dependencies = { curl = "*" }
+exposed = { curl = "curl" }
+
+[envs.direnv]
+channels = ["conda-forge", "shubms"]
+dependencies = { direnv = "*" }
+exposed = { direnv = "direnv" }
+
+[envs.dua-cli]
+channels = ["conda-forge", "shubms"]
+dependencies = { dua-cli = "*" }
+exposed = { dua = "dua" }
+
+[envs.duf]
+channels = ["conda-forge", "shubms"]
+dependencies = { duf = "*" }
+exposed = { duf = "duf" }
+
+[envs.eza]
+channels = ["conda-forge", "shubms"]
+dependencies = { eza = "*" }
+exposed = { eza = "eza" }
+
+[envs.fastfetch]
+channels = ["conda-forge", "shubms"]
+dependencies = { fastfetch = "*" }
+exposed = { fastfetch = "fastfetch", flashfetch = "flashfetch" }
+
+[envs.fd-find]
+channels = ["conda-forge", "shubms"]
+dependencies = { fd-find = "*" }
+exposed = { fd = "fd" }
+
+[envs.fzf]
+channels = ["conda-forge", "shubms"]
+dependencies = { fzf = "*" }
+exposed = { fzf = "fzf" }
+
+[envs.gh]
+channels = ["conda-forge", "shubms"]
+dependencies = { gh = "*" }
+exposed = { gh = "gh" }
+
+[envs.git-delta]
+channels = ["conda-forge", "shubms"]
+dependencies = { git-delta = "*" }
+exposed = { delta = "delta" }
+
+[envs.git]
+channels = ["conda-forge", "shubms"]
+dependencies = { git = "*" }
+exposed = { git = "git", git-cvsserver = "git-cvsserver", git-receive-pack = "git-receive-pack", git-shell = "git-shell", git-upload-archive = "git-upload-archive", git-upload-pack = "git-upload-pack", gitk = "gitk", scalar = "scalar" }
+
+[envs.gitui]
+channels = ["conda-forge", "shubms"]
+dependencies = { gitui = "*" }
+exposed = { gitui = "gitui" }
+
+[envs.glow-md]
+channels = ["conda-forge", "shubms"]
+dependencies = { glow-md = "*" }
+exposed = { glow = "glow" }
+
+[envs.go-gum]
+channels = ["conda-forge", "shubms"]
+dependencies = { go-gum = "*" }
+exposed = { gum = "gum" }
+
+[envs.go-shfmt]
+channels = ["conda-forge", "shubms"]
+dependencies = { go-shfmt = "*" }
+exposed = { gosh = "gosh", shfmt = "shfmt" }
+
+[envs.go-yq]
+channels = ["conda-forge", "shubms"]
+dependencies = { go-yq = "*" }
+exposed = { yq = "yq" }
+
+[envs.hexyl]
+channels = ["conda-forge", "shubms"]
+dependencies = { hexyl = "*" }
+exposed = { hexyl = "hexyl" }
+
+[envs.htop]
+channels = ["conda-forge", "shubms"]
+dependencies = { htop = "*" }
+exposed = { htop = "htop" }
+
+[envs.hyperfine]
+channels = ["conda-forge", "shubms"]
+dependencies = { hyperfine = "*" }
+exposed = { hyperfine = "hyperfine" }
+
+[envs.jaq]
+channels = ["conda-forge", "shubms"]
+dependencies = { jaq = "*" }
+exposed = { jaq = "jaq" }
+
+[envs.jc]
+channels = ["conda-forge", "shubms"]
+dependencies = { jc = "*" }
+exposed = { jc = "jc" }
+
+[envs.jq]
+channels = ["conda-forge", "shubms"]
+dependencies = { jq = "*" }
+exposed = { jq = "jq" }
+
+[envs.nvim]
+channels = ["conda-forge", "shubms"]
+dependencies = { nvim = "*", pynvim = "*" }
+exposed = { nvim = "nvim" }
+
+[envs.nvtop]
+channels = ["conda-forge", "shubms"]
+dependencies = { nvtop = "*" }
+exposed = { nvtop = "nvtop" }
+
+[envs.onefetch]
+channels = ["conda-forge", "shubms"]
+dependencies = { onefetch = "*" }
+exposed = { onefetch = "onefetch" }
+
+[envs.prettier]
+channels = ["conda-forge", "shubms"]
+dependencies = { prettier = "*" }
+exposed = { prettier = "prettier" }
+
+[envs.procs]
+channels = ["conda-forge", "shubms"]
+dependencies = { procs = "*" }
+exposed = { procs = "procs" }
+
+[envs.rclone]
+channels = ["conda-forge", "shubms"]
+dependencies = { rclone = "*" }
+exposed = { rclone = "rclone" }
+
+[envs.restic]
+channels = ["conda-forge", "shubms"]
+dependencies = { restic = "*" }
+exposed = { restic = "restic" }
+
+[envs.ripgrep-all]
+channels = ["conda-forge", "shubms"]
+dependencies = { ripgrep-all = "*" }
+exposed = { rga = "rga", rga-fzf = "rga-fzf", rga-fzf-open = "rga-fzf-open", rga-preproc = "rga-preproc" }
+
+[envs.ripgrep]
+channels = ["conda-forge", "shubms"]
+dependencies = { ripgrep = "*" }
+exposed = { rg = "rg" }
+
+[envs.ruff]
+channels = ["conda-forge", "shubms"]
+dependencies = { ruff = "*" }
+exposed = { ruff = "ruff" }
+
+[envs.skim]
+channels = ["conda-forge", "shubms"]
+dependencies = { skim = "*" }
+exposed = { sk = "sk", sk-tmux = "sk-tmux" }
+
+[envs.speedtest-cli]
+channels = ["conda-forge", "shubms"]
+dependencies = { speedtest-cli = "*" }
+exposed = { speedtest = "speedtest", speedtest-cli = "speedtest-cli" }
+
+[envs.sqlite]
+channels = ["conda-forge", "shubms"]
+dependencies = { sqlite = "*" }
+exposed = { sqlite3 = "sqlite3" }
+
+[envs.starship]
+channels = ["conda-forge", "shubms"]
+dependencies = { starship = "*" }
+exposed = { starship = "starship" }
+
+[envs.tealdeer]
+channels = ["conda-forge", "shubms"]
+dependencies = { tealdeer = "*" }
+exposed = { tldr = "tldr" }
+
+[envs.trash-cli]
+channels = ["conda-forge", "shubms"]
+dependencies = { trash-cli = "*" }
+exposed = { trash = "trash", trash-empty = "trash-empty", trash-list = "trash-list", trash-put = "trash-put", trash-restore = "trash-restore", trash-rm = "trash-rm" }
+
+[envs.wcurl]
+channels = ["conda-forge", "shubms"]
+dependencies = { wcurl = "*" }
+exposed = { wcurl = "wcurl" }
+
+[envs.yazi]
+channels = ["conda-forge", "shubms"]
+dependencies = { yazi = "*" }
+exposed = { ya = "ya", yazi = "yazi" }
+
+[envs.yt-dlp]
+channels = ["conda-forge", "shubms"]
+dependencies = { yt-dlp = "*" }
+exposed = { yt-dlp = "yt-dlp" }
+
+[envs.zoxide]
+channels = ["conda-forge", "shubms"]
+dependencies = { zoxide = "*" }
+exposed = { zoxide = "zoxide" }
+
+[envs.cosign]
+channels = ["conda-forge", "shubms"]
+dependencies = { cosign = "*" }
+exposed = { cosign = "cosign" }
+
+[envs.lazygit]
+channels = ["conda-forge", "shubms"]
+dependencies = { lazygit = "*" }
+exposed = { lazygit = "lazygit" }
+
+[envs.tree-sitter-cli]
+channels = ["conda-forge", "shubms"]
+dependencies = { tree-sitter-cli = "*" }
+exposed = { tree-sitter = "tree-sitter" }
+
+[envs.helix]
+channels = ["conda-forge", "shubms"]
+dependencies = { helix = "*" }
+exposed = { hx = "hx" }
+
+[envs.ollama]
+channels = ["conda-forge", "shubms"]
+dependencies = { ollama = { version = "*", build = "cpu*" } }
+exposed = { ollama = "ollama" }
+
+[envs.rocminfo]
+channels = ["conda-forge", "shubms"]
+dependencies = { rocminfo = "*" }
+exposed = { rocm_agent_enumerator = "rocm_agent_enumerator", rocminfo = "rocminfo" }
+
+[envs.huggingface_hub]
+channels = ["conda-forge", "shubms"]
+dependencies = { huggingface_hub = "*" }
+exposed = { hf = "hf", tiny-agents = "tiny-agents", huggingface-cli = "huggingface-cli" }
+
+[envs.offlineimap]
+channels = ["conda-forge", "shubms"]
+dependencies = { offlineimap = "*" }
+exposed = { offlineimap = "offlineimap" }
+
+[envs.uv]
+channels = ["conda-forge", "shubms"]
+dependencies = { uv = "*" }
+exposed = { uv = "uv", uvx = "uvx" }
+
+[envs.rattler-build]
+channels = ["conda-forge", "shubms"]
+dependencies = { rattler-build = "*" }
+exposed = { rattler-build = "rattler-build" }
+
+[envs.mediainfo]
+channels = ["conda-forge", "shubms"]
+dependencies = { mediainfo = "*" }
+exposed = { mediainfo = "mediainfo" }
+
+[envs.imagemagick]
+channels = ["conda-forge", "shubms"]
+dependencies = { imagemagick = "*" }
+exposed = { "Magick++-config" = "Magick++-config", MagickCore-config = "MagickCore-config", MagickWand-config = "MagickWand-config", animate = "animate", compare = "compare", composite = "composite", conjure = "conjure", convert = "convert", display = "display", identify = "identify", import = "import", magick = "magick", magick-script = "magick-script", mogrify = "mogrify", montage = "montage", stream = "stream" }
+
+[envs.typst]
+channels = ["conda-forge", "shubms"]
+dependencies = { typst = "*" }
+exposed = { typst = "typst" }
+
+[envs.rattler-sandbox]
+channels = ["conda-forge", "shubms"]
+dependencies = { rattler-sandbox = "*" }
+exposed = { rattler-sandbox = "rattler-sandbox" }
+
+[envs.sccache]
+channels = ["conda-forge", "shubms"]
+dependencies = { sccache = "*" }
+exposed = { sccache = "sccache" }
+
+[envs.ccache]
+channels = ["conda-forge", "shubms"]
+dependencies = { ccache = "*" }
+exposed = { ccache = "ccache" }
+
+[envs.sequoia-sq]
+channels = ["conda-forge", "shubms"]
+dependencies = { sequoia-sq = "*" }
+exposed = { sq = "sq" }
+
+[envs.kubo]
+channels = ["conda-forge", "shubms"]
+dependencies = { kubo = "*" }
+exposed = { ipfs = "ipfs" }
+
+[envs.7zip]
+channels = ["conda-forge", "shubms"]
+dependencies = { 7zip = "*" }
+exposed = { 7z = "7z", 7za = "7za", 7zr = "7zr", 7zz = "7zz" }
+
+[envs.jnv]
+channels = ["conda-forge", "shubms"]
+dependencies = { jnv = "*" }
+exposed = { jnv = "jnv" }
+
+[envs.go-sops]
+channels = ["conda-forge", "shubms"]
+dependencies = { go-sops = "*" }
+exposed = { sops = "sops" }
+
+[envs.age]
+channels = ["conda-forge", "shubms"]
+dependencies = { age = "*" }
+exposed = { age = "age", age-keygen = "age-keygen" }
+
+[envs.megacmd]
+channels = ["conda-forge", "shubms"]
+dependencies = { megacmd = "*" }
+exposed = { mega-attr = "mega-attr", mega-backup = "mega-backup", mega-cancel = "mega-cancel", mega-cat = "mega-cat", mega-cd = "mega-cd", mega-cmd = "mega-cmd", mega-cmd-server = "mega-cmd-server", mega-configure = "mega-configure", mega-confirm = "mega-confirm", mega-confirmcancel = "mega-confirmcancel", mega-cp = "mega-cp", mega-debug = "mega-debug", mega-deleteversions = "mega-deleteversions", mega-df = "mega-df", mega-du = "mega-du", mega-errorcode = "mega-errorcode", mega-exclude = "mega-exclude", mega-exec = "mega-exec", mega-export = "mega-export", mega-find = "mega-find", mega-ftp = "mega-ftp", mega-fuse-add = "mega-fuse-add", mega-fuse-config = "mega-fuse-config", mega-fuse-disable = "mega-fuse-disable", mega-fuse-enable = "mega-fuse-enable", mega-fuse-remove = "mega-fuse-remove", mega-fuse-show = "mega-fuse-show", mega-get = "mega-get", mega-graphics = "mega-graphics", mega-help = "mega-help", mega-https = "mega-https", mega-import = "mega-import", mega-invite = "mega-invite", mega-ipc = "mega-ipc", mega-killsession = "mega-killsession", mega-lcd = "mega-lcd", mega-log = "mega-log", mega-login = "mega-login", mega-logout = "mega-logout", mega-lpwd = "mega-lpwd", mega-ls = "mega-ls", mega-mediainfo = "mega-mediainfo", mega-mkdir = "mega-mkdir", mega-mount = "mega-mount", mega-mv = "mega-mv", mega-passwd = "mega-passwd", mega-permissions = "mega-permissions", mega-preview = "mega-preview", mega-proxy = "mega-proxy", mega-put = "mega-put", mega-pwd = "mega-pwd", mega-quit = "mega-quit", mega-reload = "mega-reload", mega-rm = "mega-rm", mega-session = "mega-session", mega-share = "mega-share", mega-showpcr = "mega-showpcr", mega-signup = "mega-signup", mega-speedlimit = "mega-speedlimit", mega-sync = "mega-sync", mega-sync-config = "mega-sync-config", mega-sync-ignore = "mega-sync-ignore", mega-sync-issues = "mega-sync-issues", mega-thumbnail = "mega-thumbnail", mega-transfers = "mega-transfers", mega-tree = "mega-tree", mega-userattr = "mega-userattr", mega-users = "mega-users", mega-version = "mega-version", mega-webdav = "mega-webdav", mega-whoami = "mega-whoami" }
+
+[envs.ffmpeg]
+channels = ["conda-forge", "shubms"]
+dependencies = { ffmpeg = "*" }
+exposed = { ffmpeg = "ffmpeg", ffplay = "ffplay", ffprobe = "ffprobe" }
+
+[envs.bws]
+channels = ["conda-forge", "shubms"]
+dependencies = { bws = "*" }
+exposed = { bws = "bws" }
+
+[envs.rustic]
+channels = ["conda-forge", "shubms"]
+dependencies = { rustic = "*" }
+exposed = { rustic = "rustic" }
+
+[envs.micro]
+channels = ["conda-forge", "shubms"]
+dependencies = { micro = "*" }
+exposed = { micro = "micro" }
+
+[envs.taplo]
+channels = ["conda-forge", "shubms"]
+dependencies = { taplo = "*" }
+exposed = { taplo = "taplo" }
+
+[envs.rocm-smi]
+channels = ["conda-forge", "shubms"]
+dependencies = { rocm-smi = "*" }
+exposed = { rocm-smi = "rocm-smi" }
+
+[envs.btop]
+channels = ["conda-forge", "shubms"]
+dependencies = { btop = "*" }
+exposed = { btop = "btop" }
+
+[envs.chezmoi]
+channels = ["conda-forge", "shubms"]
+dependencies = { chezmoi = "*" }
+exposed = { chezmoi = "chezmoi" }

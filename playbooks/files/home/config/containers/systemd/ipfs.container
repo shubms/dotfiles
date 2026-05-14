@@ -1,0 +1,22 @@
+[Unit]
+Description=IPFS Container
+
+[Container]
+AutoUpdate=registry
+ContainerName=ipfs
+Environment=TZ=Asia/Kolkata
+Image=docker.io/ipfs/kubo:latest
+# Network=host
+PublishPort=127.0.0.1:5001:5001
+PublishPort=127.0.0.1:8080:8080
+PublishPort=4001:4001
+PublishPort=4001:4001/udp
+Volume=ipfs-data:/data/ipfs
+Volume=ipfs-staging:/export
+Volume=ipfs-init:/container-init.d
+
+[Service]
+Restart=always
+
+[Install]
+WantedBy=default.target

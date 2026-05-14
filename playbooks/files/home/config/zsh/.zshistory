@@ -1,0 +1,30 @@
+/usr/bin/env zsh
+/usr/bin/env zsh --login
+rm .zcompdump .histfile
+rm ~/.bash*
+echo $PATH
+sudo pacman -Rs xonsh
+rg '.local/sbin' /etc
+clear
+rg 'PATH' /etc
+cat /etc/profile.d/99-local-precedence.sh
+helix $XDG_CONFIG_HOME/pixi/config.toml
+rm ~/.cache/pixi -fr
+rm ~/.pixi -fr
+dua i ~
+helix $XDG_CONFIG_HOME/zsh/.zshrc
+cd
+helix ~/.zshenv
+echo $path
+sync
+lla
+echo $PIXI_HOME
+pixi info
+pixi g s
+lla ~/.config
+lla ~/.config/pixi
+lla ~/.config/pixi/
+pixi g ls
+xonsh
+cd
+xonsh

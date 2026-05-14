@@ -8,7 +8,7 @@
     section: "{{ item.section }}"
     value: "{{ item.value }}"
   loop:
-    - { section: core, option: editor, value: hx }
+    - { section: core, option: editor, value: micro }
     - { section: core, option: pager, value: delta }
     - { section: delta, option: dark, value: true }
     - { section: delta, option: line-numbers, value: true }

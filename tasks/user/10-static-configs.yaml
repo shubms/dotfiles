@@ -1,18 +1,34 @@
 - name: Link static config files
   ansible.builtin.file:
-    src: "{{ item.src }}"
-    path: "{{ item.path }}"
-    state: link
-    owner: "{{ user }}"
-    group: "{{ user }}"
     force: true
+    group: "{{ user }}"
+    owner: "{{ user }}"
+    path: "{{ item.path }}"
+    src: "{{ item.src }}"
+    state: link
   # yamllint disable rule:indentation
   loop:
     - {
-        name: "Xonsh config directory",
+        name: "Xonsh config",
         src: "{{ playbook_dir }}/files/home/config/xonsh",
         path: "{{ home }}/.config/xonsh/rc.d",
       }
+    - {
+        name: "Gram config",
+        src: "{{ playbook_dir }}/files/home/config/gram",
+        path: "{{ home }}/.config/gram",
+      }
+    - {
+        name: "Konsole config",
+        src: "{{ playbook_dir }}/files/home/local/konsole",
+        path: "{{ home }}/.local/share/konsole",
+      }
+    - {
+        name: "Flatpak Overrides",
+        src: "{{ playbook_dir }}/files/home/local/flatpak/overrides",
+        path: "{{ home }}/.local/share/flatpak/overrides",
+      }
+    # - {        name: "Podman systemd containers directory",        src: "{{ playbook_dir }}/files/home/config/containers/systemd",        path: "{{ home }}/.config/containers/systemd",      }
   # yamllint enable rule:indentation
   loop_control:
     label: "Linking {{ item.name }}"

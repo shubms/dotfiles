@@ -1,0 +1,5 @@
+[Context]
+filesystems=xdg-documents:ro;!xdg-desktop;!xdg-music;!xdg-videos;!xdg-pictures;
+
+[Session Bus Policy]
+org.kde.plasma.browser.integration=talk

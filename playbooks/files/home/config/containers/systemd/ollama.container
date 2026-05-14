@@ -1,0 +1,19 @@
+[Unit]
+Description=Ollama Container
+
+[Container]
+AddDevice=/dev/dri
+AddDevice=/dev/kfd
+AutoUpdate=registry
+ContainerName=ollama
+Environment=HSA_OVERRIDE_GFX_VERSION=10.3.0
+Image=docker.io/ollama/ollama:rocm
+PublishPort=11434:11434
+Volume=ollama:/root/.ollama
+
+[Service]
+IPAccounting=True
+Restart=always
+
+[Install]
+WantedBy=default.target

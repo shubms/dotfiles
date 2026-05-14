@@ -1,0 +1,17 @@
+[Unit]
+Description=Monero Container
+
+[Container]
+AutoUpdate=registry
+ContainerName=monero
+Image=quay.io/shubms/monero:latest
+StopTimeout=900
+Volume=monero:/home/monero/.bitmonero
+
+[Service]
+IPAccounting=True
+Restart=always
+TimeoutStopSec=900
+
+[Install]
+WantedBy=default.target

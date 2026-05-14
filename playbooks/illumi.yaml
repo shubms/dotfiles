@@ -1,4 +1,4 @@
-- name: illumi
+- name: Illumi desktop config
   hosts: localhost
   become: true
   vars:
@@ -11,5 +11,3 @@
       ansible.builtin.include_tasks: ../tasks/system/10-containers.yaml
     - name: Configure DNS and resolve.conf
       ansible.builtin.include_tasks: ../tasks/system/10-networking.yaml
-    - name: Configure KDE Linux
-      ansible.builtin.include_tasks: ../tasks/system/20-kdelinux.yaml

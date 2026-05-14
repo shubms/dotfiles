@@ -7,10 +7,12 @@
   tasks:
     - name: Link static config files
       ansible.builtin.include_tasks: ../tasks/user/10-static-configs.yaml
-    - name: Configure Systemd
-      ansible.builtin.include_tasks: ../tasks/user/00-systemd.yaml
-    - name: Configure Git
-      ansible.builtin.include_tasks: ../tasks/user/10-git.yaml
+    # - name: Configure Systemd
+      # ansible.builtin.include_tasks: ../tasks/user/00-systemd.yaml
+    # - name: Configure Git
+      # ansible.builtin.include_tasks: ../tasks/user/10-git.yaml
+    # - name: Configure SSH
+      # ansible.builtin.include_tasks: ../tasks/user/10-ssh.yaml
     - name: Install Maple-Font
       ansible.builtin.include_tasks: ../tasks/user/40-install-font.yaml
       vars:

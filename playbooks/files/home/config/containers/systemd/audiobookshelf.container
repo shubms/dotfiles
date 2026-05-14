@@ -1,0 +1,23 @@
+[Unit]
+Description=AudioBookShelf container
+
+[Container]
+AutoUpdate=registry
+ContainerName=audiobookshelf
+Environment=PORT=13378
+Environment=TZ=Asia/Kolkata
+Image=ghcr.io/advplyr/audiobookshelf:latest
+NoNewPrivileges=true
+PublishPort=13378:13378
+Volume=abs-audiobooks:/audiobooks
+Volume=abs-books:/books
+Volume=abs-config:/config
+Volume=abs-metadata:/metadata
+Volume=abs-podcasts:/podcasts
+
+[Service]
+Restart=always
+
+[Install]
+WantedBy=default.target
+

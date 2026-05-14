@@ -1,0 +1,104 @@
+// Gram settings
+//
+// For information on how to configure Gram, see the Gram
+// documentation: gram://docs/configuring-gram
+//
+// To see all of Gram's default settings without changing your
+// custom settings, run `gram: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+  "buffer_font_family": "Maple Mono NF",
+  "colorize_brackets": true,
+  "inlay_hints": {
+    "show_background": true,
+    "enabled": true,
+  },
+  "show_completions_on_input": true,
+  "indent_guides": {
+    "enabled": true,
+  },
+  "soft_wrap": "editor_width",
+  "minimap": {
+    "show": "auto",
+  },
+  "use_autoclose": true,
+  "lsp": {
+    "json-language-server": {
+      "binary": {
+        "allow_binary_download": true,
+      },
+      "enable_lsp_tasks": true,
+    },
+    "yaml-language-server": {
+      "settings": {
+        "yaml": {
+          "keyOrdering": true,
+        },
+      },
+    },
+  },
+  "file_types": {
+    "Ansible": [
+      "**.ansible.yml",
+      "**.ansible.yaml",
+      "**/defaults/*.yml",
+      "**/defaults/*.yaml",
+      "**/meta/*.yml",
+      "**/meta/*.yaml",
+      "**/tasks/*.yml",
+      "**/tasks/*.yaml",
+      "**/handlers/*.yml",
+      "**/handlers/*.yaml",
+      "**/group_vars/*.yml",
+      "**/group_vars/*.yaml",
+      "**/playbooks/*.yaml",
+      "**/playbooks/*.yml",
+      "**playbook*.yaml",
+      "**playbook*.yml",
+    ],
+  },
+  "languages": {
+    "Ansible": {
+      "prettier": {
+        "allowed": true
+      }
+    },
+    "JSON": {
+      "prettier": {
+        "allowed": true,
+      },
+    },
+    "Python": {
+      "language_servers": ["ty", "..."],
+    },
+    "TOML": {
+      "language_servers": ["taplo", "..."],
+    },
+  },
+  "outline_panel": {
+    "file_icons": true,
+  },
+  "project_panel": {
+    "file_icons": true,
+    "folder_icons": true,
+  },
+  "title_bar": {
+    "show_branch_icon": true,
+  },
+  "tabs": {
+    "file_icons": true,
+  },
+  "file_finder": {
+    "file_icons": true,
+  },
+  "icon_theme": "Catppuccin Mocha",
+  "restore_on_startup": "last_workspace",
+  "base_keymap": "VSCode",
+  "ui_font_size": 16,
+  "buffer_font_size": 16.0,
+  "theme": {
+    "mode": "system",
+    "light": "Catppuccin Latte",
+    "dark": "Catppuccin Mocha",
+  },
+}

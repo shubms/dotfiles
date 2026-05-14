@@ -1,0 +1,25 @@
+[Unit]
+Description=Syncthing Container
+
+[Container]
+AutoUpdate=registry
+ContainerName=syncthing
+Environment="STGUIADDRESS="
+Environment=TZ=Asia/Kolkata
+HostName=%H
+Image=ghcr.io/syncthing/syncthing:latest
+Network=host
+UserNS=keep-id
+Volume=%h/Documents:/var/syncthing/documents
+Volume=%h/Music:/var/syncthing/music
+Volume=%h/Pictures/DCIM:/var/syncthing/dcim
+Volume=%h/Public/android:/var/syncthing/android
+Volume=%h/Public/games/hgs/sync:/var/syncthing/hgs
+Volume=%h/Sync:/var/syncthing/sync
+Volume=syncthing:/var/syncthing
+
+[Service]
+Restart=always
+
+[Install]
+WantedBy=default.target
